@@ -1,0 +1,37 @@
+### aliases for ichio
+#
+
+# files
+alias ls='\ls -F --color=auto'
+alias l='ls -l'
+alias a='ls -A'
+alias la='ls -lA'
+function list(){ ls -lR $@ | less -F -X; }
+alias clean='rm -f *~'
+alias f='file *'
+function backup(){ tar czf ~/backup/_$1_`date +%Y%m%d_%H%M`.taz $@ ; }
+
+# pager
+alias m='less -F -X'
+
+# directories
+alias cd='export PREDIR=`pwd` && \cd '
+alias back='export _PREDIR=`pwd` && \cd $PREDIR && export PREDIR=$_PREDIR'
+alias d='dirs'
+alias pu='pushd'
+alias po='popd'
+
+# shell
+alias c='clear'
+alias h='history | more'
+alias j='jobs'
+alias k='kill'
+alias k1='kill %1'
+alias k2='kill %2'
+alias k3='kill %3'
+alias k4='kill %4'
+alias hg='history | grep'
+
+# misc
+alias soa='. ~/.alias'
+alias via='vi ~/.alias'
