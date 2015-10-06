@@ -7,7 +7,7 @@ alias l='ls -l'
 alias a='ls -A'
 alias la='ls -lA'
 function list(){ ls -lR $@ | less -F -X; }
-alias clean='rm -f *~'
+alias clean='find -name "*~" -exec rm -f {} +'
 alias f='file *'
 function backup(){ tar czf ~/backup/_$1_`date +%Y%m%d_%H%M`.taz $@ ; }
 
@@ -30,6 +30,10 @@ alias k1='kill %1'
 alias k2='kill %2'
 alias k3='kill %3'
 alias k4='kill %4'
+alias 1='%1'
+alias 2='%2'
+alias 3='%3'
+alias 4='%4'
 alias hg='history | grep'
 
 # misc
